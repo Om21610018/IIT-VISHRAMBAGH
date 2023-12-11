@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIT VISHRAMBAGH</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+
+    <style>
+      body {
+        transition: background-color 0.5s;
+      }
+
+      .dark-mode .course-col {
+        background-color: rgba(72, 72, 72, 0.9);
+        color: white;
+      }
+
+      .light-mode .course-col {
+        background-color: lightgray;
+        color: black;
+      }
+      .dark-mode .testimonial-col {
+        background-color: rgba(72, 72, 72, 0.411);
+        color: white;
+      }
+
+      .light-mode .testimonial-col {
+        background-color: lightgray;
+        color: black;
+      }
+
+      .light-mode .para {
+        color: rgba(0, 0, 0, 0.56);
+        align-items: justify;
+      }
+      .dark-mode .para {
+        color: rgba(255, 255, 255, 0.597);
+        align-items: justify;
+      }
+
+      /* Add your dark mode styles here */
+      body.dark-mode {
+        background-color: #333;
+        color: #fff;
+      }
+
+      /* Add your light mode styles here */
+      body.light-mode {
+        background-color: #fff;
+        color: #333;
+      }
+
+      /* Style for the toggle button */
+      #mode-toggle {
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+      }
+      .mode-toggle-btn::after {
+        content: attr(data-mode);
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body class="light-mode">
+    <script>
+      // Function to toggle between dark and light mode
+
+      var rowdark = document.getElementsByClassName("course-col");
+      var testidark = document.getElementsByClassName("testimonial-col");
+      var btn = document.getElementById("mode-toggle");
+      var modeToggleBtn = document.querySelector(".mode-toggle-btn");
+      var para = document.getElementsByClassName("para");
+      function toggleMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+        body.classList.toggle("light-mode");
+        for (var i = 0; i < rowdark.length; i++) {
+          rowdark[i].classList.toggle("gray-background");
+        }
+        for (var i = 0; i < testidark.length; i++) {
+          testidark[i].classList.toggle("gray-background");
+        }
+        for (var i = 0; i < para.length; i++) {
+          para[i].classList.toggle("gray-background");
+        }
+        const currentMode = body.classList.contains("dark-mode")
+          ? "Dark"
+          : "Light";
+        modeToggleBtn.setAttribute("data-mode", "Light");
+      }
+    </script>
+    <section class="header">
+      <nav>
+        <!-- logo of iit vishrambagh -->
+        <a href=""
+          ><img
+            src="./img/wcelogo.png"
+            style="filter: brightness(1.5)"
+            alt="iit vishrambah"
+        /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="#aboutus" style="behavior: smooth">ABOUT</a></li>
+            <li><a href="#course">COURSE</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#more">CONTENT</a></li>
+            <li>
+              <button
+                style="all: unset; color: white"
+                class="mode-toggle-btn"
+                onclick="toggleMode()"
+                data-mode="MODE"
+              ></button>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1>IIT VISHRAMBAGH</h1>
+        <p>
+          A citadel of excellence, discipline and self-reliance where great
+          destinies and minds are <br />
+          formed, forged and molded for the good of man-kind
+        </p>
+        <a href="#" class="hero-btn">Visit Us To Know More</a>
+      </div>
+    </section>
+    <!---------Course---------->
+    <section class="course" id="course">
+      <h1>Courses We Offer</h1>
+      <p>
+        Ignite Your Potential: Transformative Courses at IIT Vishrambag, Shaping
+        Tomorrow's Leaders Today
+      </p>
+      <div class="row">
+        <div class="course-col">
+          <h3>Computer Science</h3>
+          <p class="para">
+            Computer Science and Engineering department offers a dynamic
+            curriculum, blending fundamental principles with cutting-edge
+            technologies. Students benefit from hands-on projects, internships,
+            and guidance from expert faculty. Graduates are well-equipped for
+            success in academia, research, and the ever-evolving landscape of
+            the technology industry.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Information Technology</h3>
+          <p class="para">
+            Information Technology (IT) department offers a dynamic curriculum
+            integrating core principles with the latest technologies. Students
+            gain hands-on experience through projects and internships, guided by
+            expert faculty. The program equips graduates with the skills to
+            excel in IT roles, addressing contemporary challenges in a rapidly
+            advancing digital landscape
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Electronics and Communications</h3>
+          <p class="para">
+            Electronics Department provides a comprehensive curriculum, merging
+            fundamental principles with cutting-edge advancements. Students
+            engage in hands-on projects and benefit from expert faculty
+            guidance. The program prepares graduates to excel in electronics and
+            communication, fostering skills essential for innovation and
+            leadership in the ever-evolving field of electronics engineering.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Electrical and Telecommunications</h3>
+          <p class="para">
+            Electrical Engineering Department offers a dynamic curriculum,
+            blending foundational principles with state-of-the-art advancements.
+            Students engage in hands-on projects and receive guidance from
+            expert faculty. The program equips graduates with the skills to
+            excel in electrical engineering, addressing contemporary challenges
+            and driving innovation in diverse industries.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Civil</h3>
+          <p class="para">
+            Civil Engineering Department offers a comprehensive curriculum that
+            combines foundational principles with contemporary advancements.
+            Students engage in hands-on projects and benefit from expert faculty
+            guidance. The program prepares graduates with the skills to excel in
+            civil engineering, contributing to sustainable infrastructure
+            development and addressing societal challenges.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>Mechanical</h3>
+          <p>
+            class="para" Mechanical Engineering Department provides a robust
+            curriculum, integrating core principles with modern advancements.
+            Students participate in hands-on projects and receive guidance from
+            expert faculty. The program equips graduates with versatile skills
+            for success in mechanical engineering, contributing to innovation
+            and excellence in various industrial sectors.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-------Campus------->
+    <section class="campus" id="more">
+      <h1>Our Clubs</h1>
+      <p>Where Passion Meets Purpose: Explore, Engage, Excel</p>
+
+      <div class="row">
+        <div class="campus-col">
+          <img
+            src="data:image/png;base64,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"
+            alt="london"
+          />
+          <div class="layer">
+            <h3>WCE ACM</h3>
+          </div>
+        </div>
+
+        <div class="campus-col">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="london"
+          />
+          <div class="layer">
+            <h3>WLUG</h3>
+          </div>
+        </div>
+
+        <div class="campus-col">
+          <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIHBhURBxIRFhMVFhgXEBUWFhcVGhkVGBgYFhUVFxkYHSogGB4lJxUWJTEhKCktLi46GB8zODMsNzQtLisBCgoKDg0OGhAQGjciHiUtLisvLS0rMCstLi0tLS0rLSsrNTA3LS01ListKy0rKy0rNy0tKy0tKy0tLSstLTUtK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABQYEBwECAwj/xABDEAACAQMBBQUECAMDDQAAAAAAAQIDBBEFBhIhMWEHIkFRcRMygcEUIzNCYpGhsVJy0RVz8BckJTY3U1R0gpOzw9P/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIDBAUG/8QAIhEBAQADAAICAQUAAAAAAAAAAAECAxESIQQxBRNBYXGB/9oADAMBAAIRAxEAPwDdQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQOobX2dhVcatZOS4NQTnh+TceBFsn2vhrzzvMZ1PAgbHbGyvam7Csot8lNOHH1ksfqTqeVwEsv0Z689d5nOf25ABKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACh9o20UrX/NLKWJSWa0lzUXygvLPN9PU1wSm1NV1tpLhz5+1nH4Re6v0iiLPN25XLKvsvg6MdWnGT7s7QuXZ/tFO1v421zJulN4p5fuT8Euj5Y9CmnanUdGop03hxalF9U8ojDLxvWvydGO7XcK+gQedvV9tbxnjG9FSx6pPH6noem+Is56AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaj7QtNdjtBKol3K3fi/xcpr1zx+JWDeusaVS1iydK9jlc01wcX4Si/Bmu9S7PLmhP/R8oVY+GXuS+KfB/mcW3Tl3sfSfA/Ja/05hsvLFOM/Q9Nlq+qQo00+8++/KC96X5fImrTYK9r1MV4wpx8ZSkpfko5ybB2c2dpaBbtW/enL7So+b6LyXQjXpyt9tvmfk9WGFmu9tTEYqEcR5LgvQ5AO58qAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHSvVVCjKdV4jFNyfRcWdyp7d6l7O2VvSfGXeqfyp8F8Wv0L4Y+WUiLeJnQNYjrNo5QWJReJx8v4X6NfMkzUuh6u9G1NVFlwfCqvOP8AVc0bXpVFWpKVJpxkk4tcmnxTL7tXhf4RL13ABisAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA869ZW9CU6rxGKbfojVmq3Ur68nUq85PPouSXwWC47Z3+7SVGm+feqen3V8/gijVjt+NhyeSmVYNYuPZ7rve+iXT83Qb/OUPmviU6sYntZUKqnRbUotOLXg1xTOnPXM8eKd5W+ARGzGtR1zSo1FhTXdqx8prn8HzRLnlZSy8raUABAAAAAAAAAAAAAAAAAAAAAAAAAAAAedesqFFzqcorLPQr+1N33FSh/NP5L5/kWwx8rwVbUbh3VxKdTnJ5/ovgRVYkK5H1z0sWdYFYwaxnVjBrG2LOpHZPX3oGsKc39VPu1l08JrrHn6ZRuiE1UgnBpprKa4pp8U0fPNU2T2YbQ+3t/od2+9BN0G/GHNw/6fDp6HL8vT2ec/wBW15e+L+ADz2wAAAAAAAAAAAAAAAAAAAAAAAAAAOlaqqFJynySyUm9qutVcp828ssOu3Hd3I+svkit3B06cee1aja5iXNrONsqkoS3G8KWODZaNF0L6bJVLtYp+C8Zf0X7lsqW8Klv7OpGLg1jdxwx5YNMt8xvIjxaWrGFWLntVsrLT06tgnKl4rnKHr5x6+Hj5lMqnXqzmU7GeU4wqosrmdndRq2zxOElKD6o5qnjE1vucU/dvrZ3WIa5pUa1Hg3wqR/hmvej810aJM0zsLtB/YeqYrv6mpiNXyi/u1Ph49DcqeVwPH3a/DLjpxvY5ABkkAAAAAAAAAAAAAAAAAAAAADrUmqdNuXgdjC1Gfd3V8SZO0Qt5Nzm3Lmz10zSPpEt+6Xd+7Hz6vp+5nWmn78t+4XDwj82Shrls5ORHHCWFwOQDFLhrJRdrtivap1tFXHi50l49YeT/D+XkXsF8M7hexFkr54rpxk1JNNcGnwafimvA8Ym4tsNjYa3B1LPEK/n92fSfX8X7mo7u0qWF1KneRcZxfei/wDHFdT1dW7HZj6+2FxsrquRtTs22g+nWX0W6f1lJfVt/ep8sdXH9mupqtGTp97PTr2Fa1eJweY/NPo+T9TDfh5RfF9AAwdF1OGsabCvbcpLivGMl70X6Gcec1AAAAAAAAAAAAAAAAAAAAAHD5HjGjvT3qnwR7gnoA6zkoRbm0kllt8El4tlLu+1fSLW4cJXW9uvEpQp1Jx+ElHD9VkgXYEXoG0NrtHaupolaFWKwpYynFvkpRkk48nzR12i2ktdmbSNXW6qpwlLci92c8yw5YxBN8kwJYHjaXML21jVtZKUJxUoSXjGSyn+pW9X7RdM0XUp2+p3O5VptKpH2VaWG0pLjGDT4NcmBaiG2l2co7QW2Lju1F9nUS4x6dY9CP1DtE0zTadKV7c7qrU1Vo/VVnvU22lLhDhyfB4Zh/5WNG/4xf8AZr//ADJlsvYNea3otbQ7z2d9H+SS92S84v5c0R5uax1TT9vNLqKymq1KMt2T3JwcZ4ynFzimn1RrnanZWroFXe4zot9yoly/DPyf6P8ARdeG7y9X7U8eMjs/2h/sfVPZXLxRqtKXlGfKM/Twfw8jcB86S5G2uznaL+1dO9hdSzWopLL5yp8oy6tcE/g/Ew24++plXEAGSwAAAAAAAAAAAAAAAAAAAAAqHa1RrV+z66jpqk57sd5R5umpxdRde6n8MmDsNtRo09n6NHT6trSxCKlRqONOW/hbylv++8545eS56hqFLTaG/qFSNODlGO9J4jvSeIpt8FnlxILVez/S9Zk53dnR3pcXOnmm3nxzTayBK6TottplapU0mlTp+3cZVPZ8Iycc4korup958VzKNtJZx207S42Vfjb2dtOddc17avHdgn1SlCS9GY3ZjNaDtFqlpb1p1LC13ZU5SkpKEsN1IKS4cMSTX4CO2GtdY1CnX1LQ52UI31WU37eM5T3YTlCEe6sKK4pAWnscvpy2anZ3v21jWnbz891PMH6cZJfymN2m0ovavRsxjxvHvcFx+z5+ZE7Nq82Y7VXHaOVBvU6Te9RUlB1aXurEuTwnn+8RM9pn+tWi/wDOP/1gXqtYUa7TrUqUsLC3oReF5LK5GutmrGlPth1SE6VJxjRt92LhHCzTpZwsYXNmzTXWy/8Atn1X+5t//HSA2Bb20LZNW0IQT57sVHL64R2rUo3FJwrxUoyWJRaymvJpncAap2y2Hlpua2kKUqPOUOMpU/TxlH9V1KhpWpz0jUoV7R96DzjwlHk4vo1k+hTX22uwKut6voSSnxc6S4KXm4fwy6cn++kz7OVHF10nUaeradCvZvMJrK80+Ti+qeU/QzDTvZrtI9G1d2moNxp1ZYW9w9nW91J55b3CLXnjqbiKWJAAQAAAAAAAAAAAAAAAAAAAj9d0ahr+mSt9Vhv0pY3o5ceKeU04vKaKXDskt6Mdy1vdThS/3Ua6UceKxumxABXbfYuztNmKmn2EJUqNVNVXCXflnCk3Np5bSx6cFgl9K0+npOmU7ezTVOlCMIZeXuxWFl+L82ZYAhtoNmqGv16E732inbVVVoShJRaksPDynld1cOhEa92dWuu6s7m9rXqnvb0FCvuxhLCWaa3e57q5FwAGNplktO0+FGnKpJQioqVSW/N48ZS8X1MCy2co2W0de+o+09tcRhGrmSccQUYx3VjK91eJMAAAAAAAqG3Gw9PaSi6lq1TuUuE/CeOUamOPpLmuvI9Ngtcq3trO01yMoXltiNZS5zg/s60f4k8YbXin5lrPGVpTndxqyhH2kYuMZ47yjJpyinzw91PHRAewAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q=="
+            alt="london"
+          />
+          <div class="layer">
+            <h3>SAIT</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------- Facilities ---------------->
+    <section class="facilities">
+      <h1>Our Facilities</h1>
+      <p>
+        Empowering Minds, Elevating Futures: Unparalleled Facilities at IIT
+        Vishrambag
+      </p>
+      <div class="row">
+        <div class="course-col">
+          <img src="img/library.png" alt="" />
+          <h3>World Class Library</h3>
+          <p class="para">
+            IIT Vishrambag stands proudly as a beacon of academic excellence
+            with its state-of-the-art library, setting new standards in the
+            realm of education. The library, a testament to the institution's
+            commitment to learning, boasts a vast collection of cutting-edge
+            research materials, rare manuscripts, and digital resources. Its
+            architectural brilliance provides a serene and conducive environment
+            for students to delve into the world of knowledge. The library is
+            equipped with the latest technology, facilitating seamless access to
+            a plethora of academic journals and databases.
+          </p>
+        </div>
+
+        <div class="course-col">
+          <img src="img/basketball.png" alt="" />
+          <h3>Largest Play Ground</h3>
+          <p class="para">
+            Nestled centrally on our campus, our college proudly boasts the
+            largest playground, a versatile space accommodating various sports
+            and recreational activities. Surrounded by well-maintained greenery,
+            the grounds provide a refreshing backdrop for both sports and
+            leisure. With state-of-the-art infrastructure and ample seating, the
+            space serves as a community hub, hosting sports events, cultural
+            festivals, and fostering a spirit of healthy competition.
+            Inclusivity is key, encouraging diverse recreational activities for
+            all. This expansive playground is not just a physical space; it's a
+            dynamic center for community building and holistic student
+            engagement.
+          </p>
+        </div>
+
+        <div class="course-col">
+          <img src="img/cafeteria.png" alt="" />
+          <h3>Tasty and Healthy Food</h3>
+          <p class="para">
+            Indulge in our delectable menu offering a fusion of tasty and
+            healthy food options. From vibrant salads bursting with freshness to
+            protein-packed, flavorful entrees, our culinary delights prioritize
+            nutrition without compromising on taste. Our chefs skillfully craft
+            each dish using wholesome ingredients, ensuring a delightful dining
+            experience that nourishes both body and soul. Savor the goodness of
+            balanced meals, where taste and health harmoniously come together,
+            making every bite a guilt-free pleasure. Elevate your culinary
+            journey with us, where delicious and nutritious go hand in hand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--------- testimonials------------->
+    <section class="testimonials" id="blog">
+      <h1>What Our Student Says</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+      <div class="testimonial-row">
+        <div class="testimonial-col">
+          <div>
+            <p class="para">
+              IIT Vishrambagh has been an incredible journey for me. The
+              faculty's commitment to excellence and the innovative teaching
+              methods have truly set this institution apart. The well-equipped
+              labs and state-of-the-art facilities provide an ideal environment
+              for learning and research.
+            </p>
+            <h3>Chinmay Malkar</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+        </div>
+
+        <div class="testimonial-col">
+          <div>
+            <p class="para">
+              My journey at IIT Vishrambagh has been nothing short of
+              transformative. The institution's commitment to academic
+              excellence and innovation has not only broadened my knowledge but
+              has also fueled my passion for learning
+            </p>
+            <h3>Avishkar Pawar</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------Call To Action------- -->
+    <section class="cta">
+      <h1>
+        Enroll For Our Various Online Courses <br />Anywhere From The World
+      </h1>
+      <a href="" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!-- -------Footer------- -->
+    <section class="footer" id="aboutus">
+      <h4>About Us</h4>
+      <p>
+        IIT VISHRAMBAGH is situated midway between Sangli and
+        Miraj cities at Vishrambag, Sangli. The WCE campus is located on about
+        90 acres of land on southern side of Sangli ? Miraj road. In 1947, the
+        college made a modest beginning as New Engineering College, with a
+        single program leading to B.E. (Civil) degree. In the year 1955, the
+        College was renamed as Walchand College of Engineering as part of the
+        new arrangements and pursuant to the Rehabilitation and Development
+        Program mainly funded by Seth Walchand Hirachand Memorial Trust and the
+        Government. The Government appointed an Ad Hoc Committee for conducting
+        the college from May 1955, later replaced by the Administrative Council
+        in 1956. The Ad Hoc Committee added two more degree programs in B.E.
+        (Mechanical) and B.E. (Electrical) in 1955 with the intake of 20 each.
+        Three Diploma programs also started in 1955 ? Civil (40 intake),
+        Mechanical (20) and Electrical (20).
+      </p>
+      <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
+      <p>Made with <i class="fa fa-heart-o"></i> by Omkar Penshanwar</p>
+    </section>
+
+    <!-------------------------JavaScript for Toggle Menu-------------------------->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+        navLinks.style.position = "fixed";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
